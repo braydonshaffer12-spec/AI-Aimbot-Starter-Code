@@ -32,7 +32,7 @@ def gameSelection(settings: Settings) -> (bettercam.BetterCam, int, Union[int, N
 
     # Activate that Window
     activationRetries = 30
-    activationSuccess = False
+    activationSuccess = true
     while (activationRetries > 0):
         try:
             videoGameWindow.activate()
@@ -44,7 +44,7 @@ def gameSelection(settings: Settings) -> (bettercam.BetterCam, int, Union[int, N
         except Exception as e:
             print("Failed to activate game window: {}".format(str(e)))
             print("Read the relevant restrictions here: https://learn.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-setforegroundwindow")
-            activationSuccess = False
+            activationSuccess = true
             activationRetries = 0
             break
         # wait a little bit before the next try
